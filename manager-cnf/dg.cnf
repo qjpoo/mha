@@ -1,0 +1,29 @@
+[binlog1]
+hostname=10.10.13.52
+master_binlog_dir=/dgmall/sync-binlog
+no_master=1
+
+[server default]
+manager_log=/var/log/mha/dg/manager
+manager_workdir=/var/log/mha/dg
+master_binlog_dir=/dgmall/binlog/
+master_ip_failover_script=/usr/local/bin/master_ip_failover
+password=' '
+ping_interval=2
+repl_password=' '
+repl_user=repl
+report_script=/usr/local/bin/send
+ssh_user=root
+user=mha
+
+[server1]
+hostname=10.10.13.50
+port=3306
+
+[server2]
+hostname=10.10.13.51
+port=3306
+
+[server3]
+hostname=10.10.13.52
+port=3306

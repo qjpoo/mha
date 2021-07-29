@@ -1,0 +1,38 @@
+[mysql]
+port = 3306
+socket = /dgmall/mysql/data/mysql.sock
+#default-character-set          = utf8mb4
+character-set-server          = utf8mb4
+
+
+
+[mysqld]
+port = 3306
+mysqlx_port = 33060
+mysqlx_socket = /dgmall/mysql/data/mysqlx.sock
+basedir = /usr/local/mysql
+datadir = /dgmall/mysql/data
+socket = /dgmall/mysql/data/mysql.sock
+pid-file = /dgmall/mysql/data/mysqld.pid
+log-error = /dgmall/mysql/log/error.log
+#这个就是用之前的身份认证插件
+default-authentication-plugin = mysql_native_password
+##保证日志的时间正确
+log_timestamps = SYSTEM
+# Character Settings
+init_connect='SET NAMES utf8mb4'
+# 连接建立时执行设置的语句，对super权限用户无效
+character-set-server = utf8mb4
+# 设置服务端校验规则
+collation-server = utf8mb4_general_ci
+skip-character-set-client-handshake
+
+
+secure-file-priv=/tmp
+server_id=200
+log_bin=/dgmall/binlog/mysql-bin
+binlog_format=row
+gtid-mode=on
+enforce-gtid-consistency=true
+log-slave-updates=1
+user=mysql

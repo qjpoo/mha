@@ -1,0 +1,3 @@
+#!/bin/bash
+# 用的是QQ企业邮箱
+/usr/local/bin/sendEmail -o tls=yes -f xx@qq.com -t xxoo@163.com -s "smtp.exmail.qq.com:587" -xu xxoo@qq.com -xp PLMRNxsjiuZeVFjb -u "MHA Waring !!" -m "YOUR MHA MAY BE FAILOVER !!" &>/tmp/sendmail.log
